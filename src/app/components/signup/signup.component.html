@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+          <header class="card-header">
+              <a routerLink="/login" class="float-right btn btn-outline-primary mt-1">Log in</a>
+              <h4 class="card-title mt-2">Sign up</h4>
+          </header>
+
+          <div class="card">
+              <div class="card-body">
+                  <div class="form-group col-md-6">
+                      <label>Choose the Registration Type</label>
+                      <select id="inputState" class="form-control"(change)="selectOption($event.target.value)">
+                        <option selected="selected" disabled="true"> Choose...</option>
+                          <option value="school" >school</option>
+                          <option value="parents" >Parents</option>
+                          <option value="staff" >Staff</option>
+                      </select>
+                    </div>
+              </div>
+            </div>
+            <app-school-registration *ngIf="selectedOption == 'school'"></app-school-registration>
+            <app-parents-registration *ngIf="selectedOption == 'parents'"></app-parents-registration>
+            <app-staff-registration *ngIf="selectedOption == 'staff'"></app-staff-registration>
+
+            <div class="border-top card-body text-center">Have an account? <a routerLink="/login">Log In</a></div>
+        </div>    
+    </div>
+  </div>
+</div>
