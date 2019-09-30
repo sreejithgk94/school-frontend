@@ -15,7 +15,6 @@ export class SignupComponent implements OnInit {
   }
 
   selectOption(selectedValue:any){
-    console.log(selectedValue)
       this.selectedOption=selectedValue;
   }
 }

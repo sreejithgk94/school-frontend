@@ -9,7 +9,7 @@ import { SchoolRegistrationComponent } from './components/school-registration/sc
 import { StaffRegistrationComponent } from './components/staff-registration/staff-registration.component';
 import { ParentsRegistrationComponent } from './components/parents-registration/parents-registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule, 
   MatTableModule, 
   MatPaginatorModule,
@@ -40,7 +40,8 @@ from '@angular/material';
     MatSortModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

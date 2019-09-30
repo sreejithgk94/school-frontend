@@ -1,61 +1,67 @@
 <article class="card-body">
-    <form>
-        
+    <form [formGroup]="formGroup">
             <div class="form-group">
                 <label>School name</label>
-                    <input type="text" class="form-control" placeholder="">
+                    <input type="text" class="form-control" placeholder="school Name" [(ngModel)]="schoolRegister.schoolName" formControlName="schoolName">
             </div> <!-- form-group end.// -->
                     <!-- form-row end.// -->
             <div class="form-group">
                 <label>Address</label>
-                    <textarea class="form-control" placeholder=""></textarea>
+                    <textarea class="form-control" placeholder="" formControlName="schoolAddress" [(ngModel)]="schoolRegister.schoolAddress"></textarea>
             </div> <!-- form-group end.// -->
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Registration No</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" formControlName="registrationNumber" [(ngModel)]="schoolRegister.registrationNumber">
                       </div> <!-- form-group end.// -->
                       <div class="form-group col-md-6">
                         <label>Contact</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" formControlName="contact" [(ngModel)]="schoolRegister.contact">
                       </div> <!-- form-group end.// -->
                 </div>
                 <div class="form-group">
                     <label>Email address</label>
-                    <input type="email" class="form-control" placeholder="">
-                    <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <input type="email" class="form-control" placeholder="" formControlName="email" [(ngModel)]="schoolRegister.email">
+                    <small class="form-text text-muted">We'll never share your email with anyone else & share only school's Email address</small>
                 </div> <!-- form-group end.// -->
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label>State</label>
-                      <input type="text" class="form-control">
-                    </div> <!-- form-group end.// -->
+                        <label>Country</label>
+                        <select id="inputState" class="form-control" formControlName="country" [(ngModel)]="schoolRegister.country">
+                          <option selected="selected" disabled="true"> Choose...</option>
+                            <option>Uzbekistan</option>
+                            <option>Russia</option>
+                            <option>United States</option>
+                            <option>India</option>
+                            <option>Afganistan</option>
+                        </select>
+                      </div> <!-- form-group end.// -->
                     <div class="form-group col-md-6">
-                      <label>Country</label>
-                      <select id="inputState" class="form-control">
-                        <option selected="selected" disabled="true"> Choose...</option>
-                          <option>Uzbekistan</option>
-                          <option>Russia</option>
-                          <option>United States</option>
-                          <option>India</option>
-                          <option>Afganistan</option>
-                      </select>
+                      <label>State</label>
+                      <input type="text" class="form-control" formControlName="state" [(ngModel)]="schoolRegister.state">
                     </div> <!-- form-group end.// -->
                 </div> <!-- form-row.// -->
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label>District</label>
+                      <input type="text" class="form-control" formControlName="district" [(ngModel)]="schoolRegister.district">
+                    </div>
+                </div>
                 <div class="form-group">
                   <label>Username</label>
-                  <input class="form-control" type="text">
+                  <input class="form-control" type="text" formControlName="userName" [(ngModel)]="schoolRegister.userName">
               </div> <!-- form-group end.// --> 
                 <div class="form-group">
                     <label>Password</label>
-                    <input class="form-control" type="password">
+                    <input class="form-control" type="password" formControlName="password" [(ngModel)]="password">
                 </div> <!-- form-group end.// -->  
                 <div class="form-group">
                     <label>Confirm password</label>
-                    <input class="form-control" type="password">
+                    <input class="form-control" type="password" formControlName="confirmPassword" [(ngModel)]="confirmPassword">
                 </div> <!-- form-group end.// --> 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block"> SignUp  </button>
+                    <button type="submit" class="btn btn-primary btn-block" (click)="signUp()"> SignUp  </button>
                 </div> <!-- form-group// -->      
                 <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>                                          
     </form>
